@@ -1,0 +1,23 @@
+<div class="movies">
+  <div class="card-deck">
+    <div *ngFor="let movie of movies"
+      [class.selected]="movie === selectedMovie"
+      (click)="onSelect(movie)" style="display: inline-block;">
+      <div class="col-sm-6">
+        <div class="card" style="width: 18rem;">
+          <img src="{{movie.poster}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{movie.title}}</h5>
+                <p class="card-text">Released in: {{movie.year}}</p>
+                <p class="card-text">ImdbID: {{movie.imdbId}}</p>
+                <p class="card-text">Type: {{movie.type}}</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+  

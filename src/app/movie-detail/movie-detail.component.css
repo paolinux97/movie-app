@@ -1,0 +1,14 @@
+div {
+    text-align: left;
+    width: 650px;
+    height: 40%;
+    float: right;
+}
+
+.movie-detail {
+    font-size: 1.5vw;
+}
+
+h2, h3 {
+    font-size: 2vw;
+}

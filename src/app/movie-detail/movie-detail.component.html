@@ -1,0 +1,29 @@
+<div class="container">
+    <div *ngIf="movie">
+        
+        <div class="movie-detail">
+            <h2>"{{movie.title | uppercase}}"</h2>
+            <h3>Details</h3>
+            <div>
+            <label>ImdbID:
+                <span>{{movie.imdbId}}</span>
+            </label>
+            </div>
+            <div>
+            <label>Title:
+                <span>{{movie.title}}</span>
+            </label>
+            </div>
+            <div>
+            <label>Year:
+                <span>{{movie.year}}</span>
+            </label>
+            </div>
+            <div>
+            <label>Type:
+                <span>{{movie.type}}</span>
+            </label>
+            </div>
+        </div>
+    </div>
+</div>
