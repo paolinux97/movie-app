@@ -10,7 +10,7 @@ import { MOVIES } from '../mock-movies';
 export class MoviesComponent implements OnInit {
   movies = MOVIES;
   selectedMovie: Movie;
-  
+
   constructor() { }
 
   ngOnInit() {

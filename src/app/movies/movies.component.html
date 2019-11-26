@@ -1,22 +1,36 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="card-deck"  *ngFor="let movie of movies"
+        [class.selected]="movie === selectedMovie"
+        (click)="onSelect(movie)">
 <div class="movies">
-  <div class="card-deck">
-    <div *ngFor="let movie of movies"
-      [class.selected]="movie === selectedMovie"
-      (click)="onSelect(movie)" style="display: inline-block;">
-      <div class="col-sm-6">
-        <div class="card" style="width: 18rem;">
-          <img src="{{movie.poster}}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{movie.title}}</h5>
-                <p class="card-text">Released in: {{movie.year}}</p>
-                <p class="card-text">ImdbID: {{movie.imdbId}}</p>
-                <p class="card-text">Type: {{movie.type}}</p>
-            </div>
-        </div>
-      </div>
-    </div>
+  
+    
+    <div class="card" style="width: 18rem;display: inline-block;">
+<img src="{{movie.poster}}" class="card-img-top">  <div class="card-body">
+<h6 class="card-title">{{movie.title}}</h6>
+   
+<a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>
+  </div>
   </div>
 </div>
+</div>
+
+<!--
+<div class="card" style="width: 18rem;display: inline-block;" *ngFor="let movie of movies"
+        [class.selected]="movie === selectedMovie"
+        (click)="onSelect(movie)">
+<img src="{{movie.poster}}" class="card-img-top">  <div class="card-body">
+    <h5 class="card-title">{{movie.title}}</h5>
+   <p class="card-text">{{movie.title}}</p>
+              <p class="card-text">Year: {{movie.year}}<br>
+                ImdbID: {{movie.imdbId}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>--> 
+      
 
     
 
