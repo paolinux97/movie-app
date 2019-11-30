@@ -1,20 +1,23 @@
-<div class="container">
-    <div *ngIf="movie">
-        
-        <div class="movie-detail">
-                <label>
-                    {{movie.title}}
-                </label>
-                <label>
-                    <span>{{movie.year}}</span>
-                </label>
-                <label>
-                    <span>{{movie.imdbId}}</span>
-                </label>
-                <label>
-                    <span>{{movie.type}}</span>
-                </label>
-
-        </div>
-    </div>
-</div>
+<ul class="list-group">
+    <img src="{{data.Poster}}" style="width: 350px;height: 520px" *ngIf="data.Poster">
+    <li class="list-group-item" *ngIf="data.Title"><h3>Title: "{{data.Title}}"</h3></li>
+    <li class="list-group-item" *ngIf="data.Type">Type: {{data.Type}}</li>
+    <li class="list-group-item" *ngIf="data.Year">Year: {{data.Year}}</li>
+    <li class="list-group-item" *ngIf="data.imdbID">imdbID: {{data.imdbID}}</li>
+    <li class="list-group-item" *ngIf="data.Rated">Rated: {{data.Rated}}</li>
+    <li class="list-group-item" *ngIf="data.Released">Released: {{data.Released}}</li>
+    <li class="list-group-item" *ngIf="data.Runtime">Runtime: {{data.Runtime}}</li>
+    <li class="list-group-item" *ngIf="data.Genre">Genre: {{data.Genre}}</li>
+    <li class="list-group-item" *ngIf="data.Director">Director: {{data.Director}}</li>
+    <li class="list-group-item" *ngIf="data.Writer">Writer: {{data.Writer}}</li>
+    <li class="list-group-item" *ngIf="data.Actors">Actors: {{data.Actors}}</li>
+    <li class="list-group-item" *ngIf="data.Plot">Plot:<br>{{data.Plot}}</li>
+    <li class="list-group-item" *ngIf="data.Language">Language: {{data.Language}}</li>
+    <li class="list-group-item" *ngIf="data.Country">Country: {{data.Country}}</li>
+    <li class="list-group-item" *ngIf="data.Awards">Awards: {{data.Awards}}</li>
+    <li class="list-group-item" *ngIf="data.Metascore">Metascore: {{data.Metascore}}</li>
+    <li class="list-group-item" *ngIf="data.imdbRating">imdbRating: {{data.imdbRating}}</li>
+    <li class="list-group-item" *ngIf="data.imdbVotes">imdbVotes: {{data.imdbVotes}}</li>
+    <li class="list-group-item" *ngIf="data.DVD">DVD: {{data.DVD}}</li>
+    <li class="list-group-item" *ngIf="data.BoxOffice">BoxOffice: {{data.BoxOffice}}</li>
+</ul>

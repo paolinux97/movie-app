@@ -1,6 +1,13 @@
 .card {
-    width: 200px;
-    height: 500px;
     margin-right: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.btn {
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
 }

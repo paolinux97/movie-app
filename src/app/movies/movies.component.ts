@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from '../model/movie';
-import { MOVIES } from '../mock-movies';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-movies',
@@ -8,15 +9,20 @@ import { MOVIES } from '../mock-movies';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
-  movies = MOVIES;
-  selectedMovie: Movie;
+  data: any = {};
 
-  constructor() { }
+  constructor(private http: HttpClient,
+    private movieService: MovieService){}
+
+  getMovies() {
+    this.movieService.getMovies().subscribe(movies => {console.log(movies);
+    this.data = movies;})
+  }
+
+  
 
   ngOnInit() {
+    this.getMovies();
   }
 
-  onSelect(movie: Movie): void {
-    this.selectedMovie = movie;
-  }
 }
