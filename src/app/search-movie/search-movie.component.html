@@ -1,7 +1,13 @@
 <nav class="navbar">
     <a class="navbar-brand"><h1>{{title}}</h1></a>
     <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input [formControl]="queryField" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+        <ul class="list-group" style="list-style-type:none">
+          <li class="list-group-item" *ngIf="data.Title">
+            <a routerLink="/movie-detail/{{data.imdbID}}">
+              {{data.Title}}
+            </a>
+          </li>
+        </ul>
     </form>
 </nav>
