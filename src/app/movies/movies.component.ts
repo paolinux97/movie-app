@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { MovieService } from '../movie.service';
+import { FormControl } from '@angular/forms';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-movies',
@@ -8,18 +9,22 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
+  title = 'Movie App';
   data: any = {};
+  queryField: FormControl = new FormControl();
 
-  constructor(private http: HttpClient,
-    private movieService: MovieService){}
+  constructor(private movieService: MovieService){}
 
-  getMovies() {   // restituisce l'elenco di film richiamando il metodo da MovieService
-    this.movieService.getMovies().subscribe(movies => {console.log(movies);
-    this.data = movies;})
+  searchByTitle() {     // restituisce elenco film i cui titoli corrispondono al parametro in ingresso del metodo "search()" di MovieService
+    this.queryField.valueChanges.pipe(
+    debounceTime(200),
+    distinctUntilChanged(),
+    switchMap((query: any) =>  this.movieService.search(query)))
+    .subscribe((result: any) => {this.data = result});
   }
 
   ngOnInit() {
-    this.getMovies();
+    this.searchByTitle();
   }
 
 }

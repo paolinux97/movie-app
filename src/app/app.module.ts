@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
-import { SearchMovieComponent } from './search-movie/search-movie.component';
 import { MovieService } from './movie.service';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -15,8 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     MoviesComponent,
-    MovieDetailComponent,
-    SearchMovieComponent
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
