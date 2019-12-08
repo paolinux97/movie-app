@@ -9,7 +9,7 @@ import { MovieService } from '../movie.service';
 })
 export class MovieDetailComponent implements OnInit {
   title = 'Movie App';
-  data: any = {};
+  movie: any = {};
 
   constructor(private route: ActivatedRoute,
     private movieService: MovieService) {}
@@ -17,7 +17,8 @@ export class MovieDetailComponent implements OnInit {
   getMovie(): void {      // restituisce i dettagli di un film specifico richiamando il metodo da MovieService
     const imdbID = this.route.snapshot.paramMap.get('imdbID');
     this.movieService.getMovie(imdbID)
-    .subscribe(movie => {console.log(movie); this.data = movie});
+    .subscribe((result: any) => {console.log(result);
+      this.movie = result});
   }
 
   ngOnInit() {

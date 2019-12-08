@@ -1,12 +1,12 @@
 <nav class="navbar">
   <a class="navbar-brand"><h1>{{title}}</h1></a>
   <form class="form-inline">
-    <input [formControl]="queryField" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" /> 
+    <input [formControl]="queryField" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/> 
   </form>
 </nav>
 <div class="container">
   <div class="row">
-    <div class="card" style="width: 16rem;"  *ngFor="let movie of data.Search">
+    <div class="card" style="width: 16rem" *ngFor="let movie of movies.Search">
       <img src="{{movie.Poster}}" class="card-img-top">
       <div class="card-body">
         <h5 class="card-title">{{movie.Title}}</h5>

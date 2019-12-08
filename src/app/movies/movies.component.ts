@@ -10,17 +10,18 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 })
 export class MoviesComponent implements OnInit {
   title = 'Movie App';
-  data: any = {};
+  movies: any = {};
   queryField: FormControl = new FormControl();
 
   constructor(private movieService: MovieService){}
 
   searchByTitle() {     // restituisce elenco film i cui titoli corrispondono al parametro in ingresso del metodo "search()" di MovieService
     this.queryField.valueChanges.pipe(
-    debounceTime(200),
-    distinctUntilChanged(),
-    switchMap((query: any) =>  this.movieService.search(query)))
-    .subscribe((result: any) => {this.data = result});
+      debounceTime(500),
+      distinctUntilChanged(),
+      switchMap((query: string) => this.movieService.getMovies(query)))
+      .subscribe((results: any) => {console.log(results);
+        this.movies = results});
   }
 
   ngOnInit() {
